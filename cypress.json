@@ -1,0 +1,67 @@
+{
+    "execTimeout":100000,
+    "onPageLoad":100000,
+    "requestTimeout":100000,
+    "responseTimeout":100000,
+    "taskTimeout":100000,
+    "defaultCommandTimeout":100000,
+        "video": false,
+        "blacklistHosts": [
+          "// Adobe",
+          "assets.adobedtm.com",
+          "dpm.demdex.net",
+          "creditcardscom.tt.omtrdc.net",
+          "cctrkom.creditcards.com",
+          "scctrkom.creditcards.com",
+      
+          "// Bing",
+          "bat.bing.com",
+      
+          "// Criteo",
+          "static.criteo.net",
+      
+          "// Disqus",
+          "creditcardscom.disqus.com",
+          "disqus.com",
+          "live.rezync.com",
+          "pippio.com",
+      
+          "// Facebook",
+          "connect.facebook.net",
+          "www.facebook.com",
+      
+          "// Google",
+          "googleads.g.doubleclick.net",
+          "www.google-analytics.com",
+          "www.google.com",
+          "www.googleadservices.com",
+          "www.googletagmanager.com",
+          "bid.g.doubleclick.net",
+          "stats.g.doubleclick.net",
+      
+          "// Hotjar",
+          "in.hotjar.com",
+      
+          "// New Relic",
+          "bam.nr-data.net",
+          "js-agent.newrelic.com",
+      
+          "// Outbrain",
+          "amplify.outbrain.com",
+          "amplifypixel.outbrain.com",
+          "tr.outbrain.com",
+      
+          "// Pinterest",
+          "ct.pinterest.com",
+          "s.pinimg.com",
+      
+          "// Taboola",
+          "cdn.taboola.com",
+          "trc.taboola.com",
+      
+          "// Yahoo",
+          "s.yimg.com",
+          "sp.analytics.yahoo.com"
+        ]
+      
+}
