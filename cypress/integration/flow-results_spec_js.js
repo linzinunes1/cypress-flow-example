@@ -1,4 +1,9 @@
 const params = require('../fixtures/flowdata.json')
+
+Cypress.Commands.add('getFlow', (selector) => {
+  return cy.get(`#flow_modal ${selector}`);
+});
+
 // Prevent 3rd party script errors from failing tests
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
@@ -31,30 +36,34 @@ Object.keys(params).forEach(function (testname) {
       cy.get('button').contains('Next').click();
 
       // Tell us what cards you already have.
-      // Wait for screen to change (TODO: Watch server requests instead)
-      cy.wait(delayHack);
+      // Wait for next form element to show up
+      cy.getFlow('input[id*="autocomplete"]');
       // Click "Next"
-      cy.get('button').contains('Next').click();
+      cy.getFlow('button').contains('Next').click();
 
       // Get the best card recommendation
-      // Wait for screen to change (TODO: Watch server requests instead)
-      cy.wait(delayHack);
+      // Wait for next form element to show up
+      cy.getFlow('input[id*="name"]');
       // Click "Skip Step"
-      cy.get('button').contains('Skip Step').click();
+      cy.getFlow('button').contains('Skip Step').click();
 
       // RESULTS PAGE
       cy.location('pathname', { timeout: 60000 }).should('include', '/results');
       // Wait for screen to change (TODO: Watch server requests instead)
       cy.wait(delayHack);
       // Click "Show more credit cards"
-      cy.get('main button').contains('Show more').click();
+      try {
+        cy.get('main button').contains('Show more').click();
+      }catch(err){
+        
+      }
 
       // Get product IDs from every "Apply Now" button on the page
       // Make sure all expected products are included
       cy.get('a[data-res-field-apply-now]').then((buttons) => {
         const productIds = Array.from(buttons).map(button => button.name);
         const hasEveryProduct = productIds.every(pid => params[testname][2].includes(Number(pid)));
-        console.log(params[testname][2], productIds);
+        console.log(params[testname][0] + params[testname][1] + productIds);
         expect(hasEveryProduct).to.be.true;
       });
     });

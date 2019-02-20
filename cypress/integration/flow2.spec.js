@@ -3,6 +3,7 @@ const axios = require('axios')
 const fs = require('browserify-fs')
 const querystring = require('querystring')
 const _ = require('lodash')
+import promisify from 'cypress-promise'
 
 Object.keys(params).forEach(function (testname) {
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -39,23 +40,17 @@ Object.keys(params).forEach(function (testname) {
             //cy.eyesCheckWindow("screen 4")
             cy.get(".flow-ccdc-buttons__button.flow-ccdc-buttons__button--pull-right.nexus-button--text.nexus-button").click({force:true})
             cy.get("h1.hero__title").contains("These cards are a match!")
-            let waited = false
-            let promise = new Promise(async(resolve, reject) => {
-                setTimeout(() => {           
-                    for (let i = 1; i <= 3; i++) {
-                        for (let it = 1; it <= 3; it++) {
-                            cy.get (".results-wrapper .results-grid:nth-of-type("+i+") .results__card:nth-of-type("+it+") .card__apply-button").scrollIntoView().should('be.visible').invoke('attr', 'name').then(($button) => {
-                            listOfIds.push($button)
-                            })
-                        }
-                    }// set waited to true
-                    resolve("done!")}, 1000)
-              });
-  
-            let listOfIds = await promise
+            const listOfIds = []
             cy.get("button.show-more").click()
-
-            waitOneSecond().then(expect(listOfIds).to.not.be.null)
+              for (let i = 1; i <= 3; i++) {
+                    for (let it = 1; it <= 3; it++) {
+                        cy.get (".results-wrapper .results-grid:nth-of-type("+i+") .results__card:nth-of-type("+it+") .card__apply-button").scrollIntoView().should('be.visible').invoke('attr', 'name').then(($button) => {
+                        listOfIds.push($button)
+                        })
+                    }
+                }
+            
+            expect(listOfIds).to.not.be.null
             
            
               
