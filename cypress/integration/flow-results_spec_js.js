@@ -79,7 +79,7 @@ Object.keys(params).forEach(function (testname) {
         expect(hasEveryProduct).to.be.true;
       });
 
-      cy.eyesClose(true);
+      cy.eyesClose();
     });
   });
 });
