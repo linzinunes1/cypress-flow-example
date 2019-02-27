@@ -20,8 +20,8 @@ Object.keys(params).forEach(function (testname) {
 
       cy.eyesOpen({
         appName: 'Flow Cypress!',
-        testName: 'Flow for Cypress!' +testname,
-        browser: { width: 800, height: 600 },
+        testName: 'Flow for Cypress! ' +testname,
+        browser: { width: 1000, height: 700 },
       });
 
     });
