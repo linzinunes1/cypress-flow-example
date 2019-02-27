@@ -66,10 +66,8 @@ Object.keys(params).forEach(function (testname) {
       cy.eyesCheckWindow("Results")
 
       // Click "Show more credit cards"
-      try {
+      if (!testname == "poorBusiness") {
         cy.get('main button').contains('Show more').click();
-      }catch(err){
-        
       }
 
       // Get product IDs from every "Apply Now" button on the page
