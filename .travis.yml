@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- 10
+cache:
+  npm: true
+  directories:
+  - "~/.cache"
+install:
+- npm ci
+script:
+- "$(npm bin)/cypress run"
+env:
+  global:
+    secure: fzZYFd4BZge+gCnHcyTbUSLzN2N3efdeEFsTmJJMApw0MGX5/kC22g8SKY35MCCNN/0JRtr8Psxbn4oVj7eOuPrpnrlZWzsR4X8zUUMMs++5VxdpIFunAOpfbzfeVKWC9MidDP1tvXW3Xi5pMiJKNdZCir/4FolC90DOxwZeMC6qXkfL+BaDSUQzBFK6Abv0b/09Ei9gHC+g8XPfwv9a+qQp9FmEAOwziJiIpZnV7QQD+VNqmBnCWbg4f7IY27TIeOOn1mBEA7ZjPwk36Qh68L6kQakiGH5tAqsXIN8DwubbmMuQ0kfmE8czoPcntO22cy9hv4inhpAXR8pbeWTLgXb0uNhu++Hu5Yh03Oui0K64kPqVsePHTUSXx6z8HPk9eKLS06pT4Kr4d9SJwGwMjiPESe26t/bPVeDJ1c251QuFlr1YfXBXrGilLxJGujGgBDs5mV4S8vTH34y+YpOSQxjTVTuvYDlZEuKZ2oYc8tm/JPhYJNuuDOAVP5f8dXvny4N0u5DgFhx+yypuAn8sG75q6wYp3lBGsAByck9QSMgYREkOWhGtd0kkdCBPwt195dEfR6dR38bwaQJwN7qwLaznqI2T2WHboy7IrWvXpJU8wQxMyqQctruWEcGnSRWKBba/rYRti/c5KU6gZPgxJLIjwfIFvulFtnsjYr5W4Ro=
+on:
+  branch: master
+notifications:
+  slack: redventures:lVylx6s1bXlvJErwdFkoomWE
