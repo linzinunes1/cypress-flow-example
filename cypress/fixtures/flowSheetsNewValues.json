@@ -1,0 +1,10 @@
+{"fairSecured": ["BG4:BG15"], 
+    "fairStudent": ["BK4:BK6"],
+    "fairPrePaid": ["BO4:BO17"],
+    "poorSecured" : ["poor", "secured", "BS4:BS18"],
+    "poorPrepaid": ["poor", "prepaid","BW4:BW18"],
+    "poorBusiness": ["poor", "business", ""], 
+    "limitedSecure": [],
+    "limitedStudent": [],
+    "limitedPrepaid": []
+}

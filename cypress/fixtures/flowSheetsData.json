@@ -1,0 +1,18 @@
+{
+    "excellentBT" : ["excellent", "balanceTransfer","G4:G18"],
+    "excellentTravel" : ["excellent", "travel", "S4:S18"],
+   "excellentZero": ["excellent", "zeroIntroAPR", "C4:C18"],
+   "excellentCB" : ["excellent", "cashBack", "K4:K18"],
+   "excellentRewards": ["excellent", "rewards", "O4:O18"],
+   "excellentBusiness": ["excellent", "business", "W4:W18"], 
+   "goodBT" : ["good", "balanceTransfer", "AE4:AE18"],
+   "goodTravel" : ["good", "travel", "AQ4:AQ18"],
+   "goodZero": ["good", "zeroIntroAPR","AA4:AA18"],
+   "goodCB" : ["good", "cashBack", "AI4:AI18"],
+   "goodRewards": ["good", "rewards", "AM4:AM18"],
+   "goodBusiness": ["good", "business","AU4:AU14"], 
+   "fairCB" : ["fair", "cashBack","AY4:AY7"],
+   "fairRewards": ["fair", "rewards","BC4:BC7"]
+
+   }
+
