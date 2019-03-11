@@ -1,9 +1,9 @@
-const cardIds = require('./getCardData.js')
+// const cardIds = require('./getCardData.js')
 
-const params = require('../fixtures/flowdata.json')
+// const params = require('../fixtures/flowdata.json')
 
-//const value = cardIds.getFlowData("excellentBT")
-console.log( "test" + cardIds.getFlowData("excellentBT"))
+// const value = cardIds.getFlowData("excellentBT")
+// console.log( "test" + cardIds.getFlowData("excellentBT"))
 // Cypress.Commands.add('getFlow', (selector) => {
 //   return cy.get(`#flow_modal ${selector}`);
 // });
