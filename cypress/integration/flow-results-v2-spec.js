@@ -2,8 +2,8 @@ const cardIds = require('./getCardData.js')
 
 const params = require('../fixtures/flowdata.json')
 
-const value = cardIds.getFlowData("excellentBT")
-console.log( "test" + cardIds.getFlowData("excellentBT"))
+//const value = cardIds.getFlowData("excellentBT")
+//console.log( "test" + cardIds.getFlowData("excellentBT"))
 Cypress.Commands.add('getFlow', (selector) => {
   return cy.get(`#flow_modal ${selector}`);
 });
@@ -18,7 +18,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 const delayHack = 700;
 
 Object.keys(params).forEach(function (testname) {
-  describe('Flow', () => {
+  describe.skip('Flow', () => {
     beforeEach(() => {
       cy.visit('https://creditcards.com?exp=182')
 
