@@ -66,8 +66,8 @@ Object.keys(params).forEach(function (testname) {
       cy.eyesCheckWindow("Results")
 
       // Click "Show more credit cards"
-      if (!testname == "poorBusiness") {
-        cy.get('main button').contains('Show more').click();
+      if (!(testname == "poorBusiness")) {
+        cy.get('button.show-more').click();
       }
 
       // Get product IDs from every "Apply Now" button on the page
@@ -76,7 +76,7 @@ Object.keys(params).forEach(function (testname) {
         const productIds = Array.from(buttons).map(button => button.name);
         const hasEveryProduct = productIds.every(pid => params[testname][2].includes(Number(pid)));
         console.log(params[testname][0] + params[testname][1] + productIds);
-        expect(hasEveryProduct).to.be.true;
+        expect(hasEveryProduct, productIds+ "did not match" + params[testname][1] ).to.be.true;
       });
 
       cy.eyesClose();
